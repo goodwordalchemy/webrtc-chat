@@ -15,7 +15,10 @@ io.on('connection', function(socket){
     socket.emit('recent messages', recent_messages);
 
     socket.on('chat message', function(msg){
-        msg_obj = {content: msg};
+        msg_obj = {
+            username: msg.username, content: msg.content
+        };
+
         io.emit('chat message', msg_obj);
         recent_messages.push(msg_obj);
         
