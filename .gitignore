@@ -1,2 +1,4 @@
 *.sw*
 webrtc-photo-demo
+node_modules
+package-lock.json
